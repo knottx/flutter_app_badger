@@ -37,13 +37,18 @@ android {
         jvmTarget = '1.8'
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 34
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
-        disable 'InvalidPackage'
+
+    buildFeatures {
+        viewBinding = true
     }
     
 }
